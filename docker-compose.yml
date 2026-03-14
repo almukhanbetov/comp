@@ -1,0 +1,44 @@
+services:
+  app:
+    image: almuko/comp-app:latest
+    container_name: comp_app
+    working_dir: /var/www
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - storage_data:/var/www/storage
+      - uploads_data:/var/www/public/uploads
+      - public_data:/var/www/public
+    depends_on:
+      - db
+
+  web:
+    image: nginx:alpine
+    container_name: comp_web
+    restart: always
+    ports:
+      - "8081:80"
+    volumes:
+      - storage_data:/var/www/storage
+      - uploads_data:/var/www/public/uploads
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - public_data:/var/www/public
+    depends_on:
+      - app
+
+  db:
+    image: postgres:17
+    container_name: comp_db
+    restart: always
+    environment:
+      POSTGRES_DB: comp
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Zxcvbnm123
+    volumes:
+      - comp_pgdata:/var/lib/postgresql/data
+volumes:
+  storage_data:
+  comp_pgdata:
+  uploads_data:
+  public_data:
