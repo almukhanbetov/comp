@@ -103,7 +103,6 @@
         </div>
         <!-- RIGHT — form panel -->
         <div class="flex-1 flex flex-col items-center justify-center px-6 py-14 lg:py-0">
-
             <!-- Mobile logo -->
             <a href="freelance.html" class="lg:hidden flex items-center gap-2.5 mb-10 fade-up d1">
                 <div class="relative w-9 h-9">
@@ -119,7 +118,6 @@
             </a>
 
             <div class="glass-card rounded-3xl p-8 sm:p-10 w-full max-w-md fade-up d2">
-
                 <!-- Tabs: Войти / Регистрация -->
                 <div
                     style="display:flex;gap:6px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:6px;margin-bottom:32px;">

@@ -12,11 +12,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-
 <body>
-
     <!-- Neural network background -->
-    <canvas id="neural-canvas"></canvas>
+    {{-- <canvas id="neural-canvas"></canvas> --}}
 
     <!-- ══════════ NAVBAR ══════════ -->
     {{-- @include('includes.nav') --}}

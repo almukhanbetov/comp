@@ -867,10 +867,10 @@
                     </div>
                     <div>
                         <div class="text-xs text-slate-500 font-mono mb-0.5">// позвонить</div>
-                        <div class="font-semibold text-white">+7 700 123-45-67</div>
+                        <div class="font-semibold text-white">+7 707 780-10-11</div>
                     </div>
                 </a>
-                <a href="https://wa.me/77001234567" class="card rounded-2xl p-6 flex items-center gap-4 group"
+                <a href="https://wa.me/77077801011" class="card rounded-2xl p-6 flex items-center gap-4 group"
                     style="border-color:rgba(37,211,102,0.15)">
                     <div
                         class="w-12 h-12 rounded-xl bg-[#25D366]/10 border border-[#25D366]/15 flex items-center justify-center flex-shrink-0 group-hover:bg-[#25D366]/20 transition-colors">
