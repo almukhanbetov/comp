@@ -893,17 +893,17 @@
                     <p class="text-slate-500 text-xs font-mono mb-6">// опиши задачу — разберёмся</p>
                     <div class="grid sm:grid-cols-2 gap-4 mb-4">
                         <div>
-                            <label class="block text-xs text-slate-500 font-mono mb-1.5">name:</label>
+                            <label class="block text-xs text-slate-500 font-mono mb-1.5">Имя:</label>
                             <input type="text" placeholder="Имя" class="inp w-full px-4 py-3 rounded-xl text-sm" />
                         </div>
                         <div>
-                            <label class="block text-xs text-slate-500 font-mono mb-1.5">phone:</label>
-                            <input type="tel" placeholder="+7 777 000-00-00"
+                            <label class="block text-xs text-slate-500 font-mono mb-1.5">Мобильный телефон:</label>
+                            <input type="tel" placeholder="+7 707 780-10-11"
                                 class="inp w-full px-4 py-3 rounded-xl text-sm" />
                         </div>
                     </div>
                     <div class="mb-4">
-                        <label class="block text-xs text-slate-500 font-mono mb-1.5">service:</label>
+                        <label class="block text-xs text-slate-500 font-mono mb-1.5">Сервис:</label>
                         <select class="inp w-full px-4 py-3 rounded-xl text-sm">
                             <option>Веб-разработка</option>
                             <option>Мобильное приложение</option>
