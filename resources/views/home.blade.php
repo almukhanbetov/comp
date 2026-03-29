@@ -26,147 +26,44 @@
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-5">
 
                 <!-- Web dev -->
-                <div class="reveal card rounded-3xl p-9 flex flex-col" style="min-height:400px">
-                    <div class="flex items-start justify-between mb-6">
-                        <div
-                            class="w-14 h-14 rounded-2xl bg-[#00e5ff]/10 border border-[#00e5ff]/15 flex items-center justify-center">
-                            <svg class="w-7 h-7 text-[#00e5ff]" fill="none" stroke="currentColor" stroke-width="1.5"
-                                viewBox="0 0 24 24">
-                                <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                            </svg>
+                @foreach ($services as $service)
+                    <div class="reveal card rounded-3xl p-9 flex flex-col" style="min-height:400px">
+                        <div class="flex items-start justify-between mb-6">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-[#00e5ff]/10 border border-[#00e5ff]/15 flex items-center justify-center">
+                                <svg class="w-7 h-7 text-[#00e5ff]" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                </svg>
+                            </div>
+                            <span class="svc-num">01</span>
                         </div>
-                        <span class="svc-num">01</span>
-                    </div>
-                    <h3 class="font-display text-2xl font-black mb-4">Веб-разработка</h3>
-                    <p class="text-slate-400 text-base leading-relaxed flex-1 mb-6">Лендинги, корпоративные сайты,
-                        веб-приложения и REST API. React/Vue фронтенд + Python/Node бэкенд.</p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center gap-2 text-xs text-slate-400"><span
-                                class="w-1.5 h-1.5 rounded-full bg-[#00e5ff] flex-shrink-0"></span>Сайты под ключ за
-                            7–14 дней</li>
-                        <li class="flex items-center gap-2 text-xs text-slate-400"><span
-                                class="w-1.5 h-1.5 rounded-full bg-[#00e5ff] flex-shrink-0"></span>SPA и сложные
-                            веб-приложения</li>
-                        <li class="flex items-center gap-2 text-xs text-slate-400"><span
-                                class="w-1.5 h-1.5 rounded-full bg-[#00e5ff] flex-shrink-0"></span>API, интеграции,
-                            парсеры</li>
-                    </ul>
-                    <div class="flex items-center justify-between pt-4 border-t border-[rgba(0,229,255,0.08)]">
-                        <div>
-                            <div class="text-[#00e5ff] font-mono font-bold text-lg">от 50 000 ₸</div>
-                            <div class="text-slate-600 text-xs">за проект</div>
-                        </div>
-                        <a href="#contact" class="btn-cyan px-4 py-2.5 rounded-xl text-xs font-bold">Заказать</a>
-                    </div>
-                </div>
+                        <h3 class="font-display text-2xl font-black mb-4">{{ $service->title }}</h3>
+                        <p class="text-slate-400 text-base leading-relaxed flex-1 mb-6">{{ $service->description }}</p>
+                        <ul class="space-y-2 mb-6">
+                            @foreach ($service->features as $f)
+                                <li class="flex items-center gap-2 text-xs text-slate-400"><span
+                                        class="w-1.5 h-1.5 rounded-full bg-[#00e5ff] flex-shrink-0"></span>
+                                    • {{ $f->title }}
+                                </li>
+                            @endforeach
+                        </ul>
+                        <div class="flex items-center justify-between pt-4 border-t border-[rgba(0,229,255,0.08)]">
+                            <div>
+                                <div class="text-[#00e5ff] font-mono font-bold text-lg">от
+                                    {{ number_format($service->price) }} ₸</div>
+                                <div class="text-slate-600 text-xs">за проект</div>
+                            </div>
 
-                <div class="reveal card-orange card rounded-3xl p-9 flex flex-col rd3" style="min-height:400px">
-                    <div class="flex items-start justify-between mb-6">
-                        <div
-                            class="w-14 h-14 rounded-2xl bg-[#ff6b35]/10 border border-[#ff6b35]/15 flex items-center justify-center">
-                            <svg class="w-7 h-7 text-[#ff6b35]" fill="none" stroke="currentColor" stroke-width="1.5"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                        </div>
-                        <span class="svc-num"
-                            style="background:linear-gradient(135deg,rgba(255,107,53,0.2),rgba(255,107,53,0.03));-webkit-background-clip:text;">02</span>
-                    </div>
-                    <h3 class="font-display text-2xl font-black mb-4">Разработка сайтов</h3>
-                    <p class="text-slate-400 text-base leading-relaxed flex-1 mb-6">Современные сайты под ключ:
-                        лендинги, визитки, интернет-магазины, корпоративные порталы. Быстро, красиво, адаптивно.</p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center gap-2 text-xs text-slate-400"><span
-                                class="w-1.5 h-1.5 rounded-full bg-[#ff6b35] flex-shrink-0"></span>Лендинги от 7 дней
-                        </li>
-                        <li class="flex items-center gap-2 text-xs text-slate-400"><span
-                                class="w-1.5 h-1.5 rounded-full bg-[#ff6b35] flex-shrink-0"></span>Интернет-магазины
-                            (WooCommerce, кастом)</li>
-                        <li class="flex items-center gap-2 text-xs text-slate-400"><span
-                                class="w-1.5 h-1.5 rounded-full bg-[#ff6b35] flex-shrink-0"></span>SEO-оптимизация и
-                            хостинг</li>
-                    </ul>
-                    <div class="flex items-center justify-between pt-4 border-t border-[rgba(255,107,53,0.1)]">
-                        <div>
-                            <div class="text-[#ff6b35] font-mono font-bold text-lg">от 30 000 ₸</div>
-                            <div class="text-slate-600 text-xs">за проект</div>
-                        </div>
-                        <a href="#contact"
-                            class="px-4 py-2.5 rounded-xl text-xs font-bold border border-[#ff6b35]/30 text-[#ff6b35] hover:bg-[#ff6b35]/10 transition-all">Заказать</a>
-                    </div>
-                </div>
+                            <button type="button" class="text-[#3b82f6] text-xs font-mono hover:underline"
+                                onclick="openModal('service', {{ $service->id }})">
+                                Записаться →
+                            </button>
 
-                <div class="reveal card rounded-3xl p-9 flex flex-col rd2" style="min-height:400px">
-                    <div class="flex items-start justify-between mb-6">
-                        <div
-                            class="w-14 h-14 rounded-2xl bg-[#00b4d8]/10 border border-[#00b4d8]/15 flex items-center justify-center">
-                            <svg class="w-7 h-7 text-[#00b4d8]" fill="none" stroke="currentColor" stroke-width="1.5"
-                                viewBox="0 0 24 24">
-                                <path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                            </svg>
+
                         </div>
-                        <span class="svc-num"
-                            style="background:linear-gradient(135deg,rgba(0,180,216,0.2),rgba(0,180,216,0.03));-webkit-background-clip:text;">03</span>
                     </div>
-                    <h3 class="font-display text-2xl font-black mb-4">Мобильные приложения</h3>
-                    <p class="text-slate-400 text-base leading-relaxed flex-1 mb-6">Android и iOS приложения на React
-                        Native / Flutter. Одна кодовая база — два магазина.</p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center gap-2 text-xs text-slate-400"><span
-                                class="w-1.5 h-1.5 rounded-full bg-[#00b4d8] flex-shrink-0"></span>React Native /
-                            Flutter</li>
-                        <li class="flex items-center gap-2 text-xs text-slate-400"><span
-                                class="w-1.5 h-1.5 rounded-full bg-[#00b4d8] flex-shrink-0"></span>Публикация в App
-                            Store и Google Play</li>
-                        <li class="flex items-center gap-2 text-xs text-slate-400"><span
-                                class="w-1.5 h-1.5 rounded-full bg-[#00b4d8] flex-shrink-0"></span>Интеграция с API и
-                            платёжками</li>
-                    </ul>
-                    <div class="flex items-center justify-between pt-4 border-t border-[rgba(0,180,216,0.1)]">
-                        <div>
-                            <div class="text-[#00b4d8] font-mono font-bold text-lg">от 100 000 ₸</div>
-                            <div class="text-slate-600 text-xs">за проект</div>
-                        </div>
-                        <a href="#contact"
-                            class="px-4 py-2.5 rounded-xl text-xs font-bold border border-[#00b4d8]/30 text-[#00b4d8] hover:bg-[#00b4d8]/10 transition-all">Заказать</a>
-                    </div>
-                </div>
-                <div class="reveal card-orange card rounded-3xl p-9 flex flex-col rd1" style="min-height:400px">
-                    <div class="flex items-start justify-between mb-6">
-                        <div
-                            class="w-14 h-14 rounded-2xl bg-[#ff6b35]/10 border border-[#ff6b35]/15 flex items-center justify-center">
-                            <svg class="w-7 h-7 text-[#ff6b35]" fill="none" stroke="currentColor" stroke-width="1.5"
-                                viewBox="0 0 24 24">
-                                <path d="M5 12H3m2 0a7 7 0 1014 0M5 12a7 7 0 0114 0m0 0h2M9 12h6M12 5v14" />
-                            </svg>
-                        </div>
-                        <span class="svc-num"
-                            style="background:linear-gradient(135deg,rgba(255,107,53,0.2),rgba(255,107,53,0.03));-webkit-background-clip:text;">04</span>
-                    </div>
-                    <h3 class="font-display text-2xl font-black mb-4">DevOps</h3>
-                    <p class="text-slate-400 text-base leading-relaxed flex-1 mb-6">Настройка VPS/VDS, Linux-серверов,
-                        Nginx, мониторинг, CI/CD. Разворачиваю и поддерживаю инфраструктуру.</p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center gap-2 text-xs text-slate-400"><span
-                                class="w-1.5 h-1.5 rounded-full bg-[#ff6b35] flex-shrink-0"></span>Настройка сервера с
-                            нуля</li>
-                        <li class="flex items-center gap-2 text-xs text-slate-400"><span
-                                class="w-1.5 h-1.5 rounded-full bg-[#ff6b35] flex-shrink-0"></span>Docker, Nginx, SSL,
-                            резервные копии</li>
-                        <li class="flex items-center gap-2 text-xs text-slate-400"><span
-                                class="w-1.5 h-1.5 rounded-full bg-[#ff6b35] flex-shrink-0"></span>Мониторинг и алерты
-                        </li>
-                    </ul>
-                    <div class="flex items-center justify-between pt-4 border-t border-[rgba(255,107,53,0.1)]">
-                        <div>
-                            <div class="text-[#ff6b35] font-mono font-bold text-lg">от 20 000 ₸</div>
-                            <div class="text-slate-600 text-xs">за задачу</div>
-                        </div>
-                        <a href="#contact"
-                            class="px-4 py-2.5 rounded-xl text-xs font-bold border border-[#ff6b35]/30 text-[#ff6b35] hover:bg-[#ff6b35]/10 transition-all">Заказать</a>
-                    </div>
-                </div> <!-- Sysadmin --> <!-- Mobile --> <!-- Website design -->
+                @endforeach
             </div>
             <!-- 2 compact cards -->
             <div class="grid sm:grid-cols-2 gap-5">
@@ -237,137 +134,38 @@
 
             <!-- Language direction cards -->
             <div class="reveal grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
-                <!-- Python -->
-                <div class="card rounded-2xl p-6 flex flex-col gap-4">
-                    <div class="flex items-center gap-3">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-[#3b82f6]/10 border border-[#3b82f6]/20 flex items-center justify-center flex-shrink-0">
-                            <span class="font-mono font-bold text-[#3b82f6] text-lg">Py</span>
+                @foreach ($courses as $course)
+                    <div class="card rounded-2xl p-6 flex flex-col gap-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-[#3b82f6]/10 border border-[#3b82f6]/20 flex items-center justify-center flex-shrink-0">
+                                <span class="font-mono font-bold text-[#3b82f6] text-lg">{{ $course->icon }}</span>
+                            </div>
+                            <div>
+                                <div class="font-display font-bold">{{ $course->title }}</div>
+                                <div class="text-xs text-slate-500 font-mono">с нуля до middle</div>
+                            </div>
                         </div>
-                        <div>
-                            <div class="font-display font-bold">Python</div>
-                            <div class="text-xs text-slate-500 font-mono">с нуля до middle</div>
-                        </div>
-                    </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Синтаксис, ООП, работа с файлами и API.
-                        Django/FastAPI для веба, автоматизация, парсинг. Идеальный первый язык.</p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="tag-blue px-2 py-0.5 rounded text-xs font-mono">Django</span>
-                        <span class="tag-blue px-2 py-0.5 rounded text-xs font-mono">FastAPI</span>
-                        <span class="tag-blue px-2 py-0.5 rounded text-xs font-mono">Pandas</span>
-                        <span class="tag-blue px-2 py-0.5 rounded text-xs font-mono">Asyncio</span>
-                    </div>
-                    <div class="flex items-center justify-between pt-3 border-t border-[rgba(59,130,246,0.1)]">
-                        <span class="text-[#3b82f6] font-mono font-bold text-sm">от 5 000 ₸ / урок</span>
-                        <a href="#contact" class="text-[#3b82f6] text-xs font-mono hover:underline">Записаться →</a>
-                    </div>
-                </div>
+                        <p class="text-slate-500 text-xs leading-relaxed"> {{ $course->description }}</p>
+                        <div class="flex flex-wrap gap-1.5">
+                            @foreach ($course->tags as $tag)
+                                <span class="tag-blue px-2 py-0.5 rounded text-xs font-mono"> {{ $tag->name }}
+                                </span>
+                            @endforeach
 
-                <!-- Go -->
-                <div class="card-orange card rounded-2xl p-6 flex flex-col gap-4 rd1">
-                    <div class="flex items-center gap-3">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-[#00e5ff]/10 border border-[#00e5ff]/20 flex items-center justify-center flex-shrink-0">
-                            <span class="font-mono font-bold text-[#00e5ff] text-lg">Go</span>
                         </div>
-                        <div>
-                            <div class="font-display font-bold">Golang</div>
-                            <div class="text-xs text-slate-500 font-mono">backend разработка</div>
-                        </div>
-                    </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Быстрый компилируемый язык для backend. Горутины,
-                        каналы, REST API на Gin/Echo. Популярен в DevOps и высоконагруженных системах.</p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="tag-cyan px-2 py-0.5 rounded text-xs font-mono">Gin</span>
-                        <span class="tag-cyan px-2 py-0.5 rounded text-xs font-mono">Goroutines</span>
-                        <span class="tag-cyan px-2 py-0.5 rounded text-xs font-mono">gRPC</span>
-                        <span class="tag-cyan px-2 py-0.5 rounded text-xs font-mono">Docker</span>
-                    </div>
-                    <div class="flex items-center justify-between pt-3 border-t border-[rgba(0,229,255,0.1)]">
-                        <span class="text-[#00e5ff] font-mono font-bold text-sm">от 6 000 ₸ / урок</span>
-                        <a href="#contact" class="text-[#00e5ff] text-xs font-mono hover:underline">Записаться →</a>
-                    </div>
-                </div>
+                        <div class="flex items-center justify-between pt-3 border-t border-[rgba(59,130,246,0.1)]">
+                            <span class="text-[#3b82f6] font-mono font-bold text-sm"> от
+                                {{ number_format($course->price) }} ₸ / урок</span>
 
-                <!-- C++ -->
-                <div class="card rounded-2xl p-6 flex flex-col gap-4 rd2">
-                    <div class="flex items-center gap-3">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-[#ff6b35]/10 border border-[#ff6b35]/20 flex items-center justify-center flex-shrink-0">
-                            <span class="font-mono font-bold text-[#ff6b35] text-sm">C++</span>
-                        </div>
-                        <div>
-                            <div class="font-display font-bold">C++</div>
-                            <div class="text-xs text-slate-500 font-mono">системное программирование</div>
-                        </div>
-                    </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Указатели, память, ООП, STL. Алгоритмы и
-                        структуры данных. Подготовка к олимпиадам и техническим собеседованиям в крупных компаниях.</p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="tag-orange px-2 py-0.5 rounded text-xs font-mono">STL</span>
-                        <span class="tag-orange px-2 py-0.5 rounded text-xs font-mono">Алгоритмы</span>
-                        <span class="tag-orange px-2 py-0.5 rounded text-xs font-mono">ООП</span>
-                        <span class="tag-orange px-2 py-0.5 rounded text-xs font-mono">Память</span>
-                    </div>
-                    <div class="flex items-center justify-between pt-3 border-t border-[rgba(255,107,53,0.1)]">
-                        <span class="text-[#ff6b35] font-mono font-bold text-sm">от 6 000 ₸ / урок</span>
-                        <a href="#contact" class="text-[#ff6b35] text-xs font-mono hover:underline">Записаться →</a>
-                    </div>
-                </div>
+                            <button type="button" class="text-[#3b82f6] text-xs font-mono hover:underline"
+                                onclick="openModal('course', {{ $course->id }})">
+                                Записаться →
+                            </button>
 
-                <div class="card rounded-2xl p-6 flex flex-col gap-4 rd2">
-                    <div class="flex items-center gap-3">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-[#ff6b35]/10 border border-[#ff6b35]/20 flex items-center justify-center flex-shrink-0">
-                            <span class="font-mono font-bold text-[#ff6b35] text-sm">PHP</span>
-                        </div>
-                        <div>
-                            <div class="font-display font-bold">PHP</div>
-                            <div class="text-xs text-slate-500 font-mono">Обучаем PHP — от новичка до
-                                backend-разработчика</div>
                         </div>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">PHP — один из самых востребованных языков для
-                        веб-разработки. Изучим синтаксис, ООП, работу с базами данных и создадим реальный проект на
-                        Laravel.</p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="tag-orange px-2 py-0.5 rounded text-xs font-mono">Laravel</span>
-                        <span class="tag-orange px-2 py-0.5 rounded text-xs font-mono">Алгоритмы</span>
-                        <span class="tag-orange px-2 py-0.5 rounded text-xs font-mono">MySQL</span>
-                        <span class="tag-orange px-2 py-0.5 rounded text-xs font-mono">Composer</span>
-                    </div>
-                    <div class="flex items-center justify-between pt-3 border-t border-[rgba(255,107,53,0.1)]">
-                        <span class="text-[#ff6b35] font-mono font-bold text-sm">от 6 000 ₸ / урок</span>
-                        <a href="#contact" class="text-[#ff6b35] text-xs font-mono hover:underline">Записаться →</a>
-                    </div>
-                </div>
-
-                <div class="card rounded-2xl p-6 flex flex-col gap-4 rd2">
-                    <div class="flex items-center gap-3">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-[#ff6b35]/10 border border-[#ff6b35]/20 flex items-center justify-center flex-shrink-0">
-                            <span class="font-mono font-bold text-[#ff6b35] text-sm">1С</span>
-                        </div>
-                        <div>
-                            <div class="font-display font-bold">1С</div>
-                            <div class="text-xs text-slate-500 font-mono">Обучаем 1С — от настройки до разработки
-                                конфигураций</div>
-                        </div>
-                    </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">1С — самая востребованная платформа автоматизации
-                        бизнеса в СНГ. Изучим встроенный язык 1С, работу с конфигурациями, отчётами и интеграциями.</p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="tag-orange px-2 py-0.5 rounded text-xs font-mono">1С:Предприятие</span>
-                        <span class="tag-orange px-2 py-0.5 rounded text-xs font-mono">Запросы</span>
-                        <span class="tag-orange px-2 py-0.5 rounded text-xs font-mono">Отчёты</span>
-                        <span class="tag-orange px-2 py-0.5 rounded text-xs font-mono">Интеграции</span>
-                    </div>
-                    <div class="flex items-center justify-between pt-3 border-t border-[rgba(255,107,53,0.1)]">
-                        <span class="text-[#ff6b35] font-mono font-bold text-sm">от 6 000 ₸ / урок</span>
-                        <a href="#contact" class="text-[#ff6b35] text-xs font-mono hover:underline">Записаться →</a>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
 
             <div class="reveal grid lg:grid-cols-2 gap-8 items-start">
@@ -390,8 +188,7 @@
                                 <div class="text-[#00e5ff] font-mono font-bold">5 000 ₸ / сессия</div>
                             </div>
                         </div>
-                        <div class="card rounded-2xl p-5 flex gap-4 items-start"
-                            style="border-color:rgba(0,229,255,0.2);">
+                        <div class="card rounded-2xl p-5 flex gap-4 items-start" style="border-color:rgba(0,229,255,0.2);">
                             <div
                                 class="w-10 h-10 rounded-xl bg-[#ff6b35]/10 border border-[#ff6b35]/15 flex items-center justify-center flex-shrink-0 text-[#ff6b35] font-mono font-bold text-sm">
                                 2</div>
@@ -837,14 +634,12 @@
     </section>
 
     <div class="divider"></div>
-
     <!-- ══════════ CONTACT ══════════ -->
     <section id="contact" class="py-24 relative z-10 bg-[#0a0f1a]">
         <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00e5ff]/25 to-transparent">
         </div>
         <div class="absolute top-1/3 right-1/4 w-80 h-80 bg-[#00e5ff]/5 rounded-full blur-3xl pointer-events-none">
         </div>
-
         <div class="w-full px-6 sm:px-10 lg:px-16">
             <div class="reveal text-center mb-14">
                 <p
@@ -854,7 +649,6 @@
                 <h2 class="font-display text-5xl sm:text-6xl font-black mb-4">Обсудим проект</h2>
                 <p class="text-slate-500 font-mono text-sm">// отвечу в течение 30 минут</p>
             </div>
-
             <div class="reveal grid sm:grid-cols-2 gap-5 mb-8">
                 <a href="tel:+77001234567" class="card rounded-2xl p-6 flex items-center gap-4 group">
                     <div
@@ -885,7 +679,6 @@
                     </div>
                 </a>
             </div>
-
             <!-- Form + Map -->
             <div class="reveal grid lg:grid-cols-2 gap-6 items-stretch">
                 <div class="card rounded-2xl p-8 flex flex-col">
@@ -929,7 +722,6 @@
                         Отправить
                     </button>
                 </div>
-
                 <!-- Map -->
                 <div class="flex flex-col gap-4">
                     <div class="relative rounded-2xl overflow-hidden border border-[rgba(0,229,255,0.15)] flex-1"
@@ -989,3 +781,93 @@
         </div>
     </section>
 @endsection
+<!-- MODAL -->
+<div id="leadModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+    <div id="leadSuccess" class="hidden mt-4 text-center">
+        <div class="text-green-400 mb-2">Заявка отправлена ✅</div>
+
+        <a id="leadWhatsappLink" href="#" target="_blank"
+            class="bg-green-500 px-4 py-2 rounded text-black font-bold">
+            Перейти в WhatsApp
+        </a>
+    </div>
+    <div class="bg-slate-900 p-6 rounded-xl w-full max-w-md relative">
+
+        <h2 class="text-white text-lg mb-4">Оставить заявку</h2>
+
+        <form id="leadForm">
+            @csrf
+
+            <input type="hidden" id="leadType">
+            <input type="hidden" id="leadEntityId">
+
+            <input name="name" placeholder="Имя" class="w-full p-2 mb-2 bg-slate-800 text-white rounded">
+
+            <input name="phone" placeholder="Телефон" class="w-full p-2 mb-2 bg-slate-800 text-white rounded">
+
+            <button class="w-full bg-cyan-500 py-2 rounded">
+                Отправить
+            </button>
+        </form>
+
+        <button onclick="closeModal()" class="absolute top-2 right-2 text-white">
+            ✕
+        </button>
+
+    </div>
+</div>
+<script>
+    function openModal(type, id) {
+        document.getElementById('leadModal').classList.remove('hidden');
+        document.getElementById('leadModal').classList.add('flex');
+
+        document.getElementById('leadType').value = type;
+        document.getElementById('leadEntityId').value = id;
+    }
+
+    function closeModal() {
+        document.getElementById('leadModal').classList.add('hidden');
+    }
+
+    document.getElementById('leadForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const form = e.target;
+
+        const data = {
+            type: document.getElementById('leadType').value,
+            entity_id: document.getElementById('leadEntityId').value,
+            name: form.name.value,
+            phone: form.phone.value,
+        };
+
+        const res = await fetch('/lead', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+
+        // скрываем форму
+        document.getElementById('leadForm').classList.add('hidden');
+
+        // показываем success блок
+        // const success = document.getElementById('leadSuccess');
+        // success.classList.remove('hidden');
+        const success = document.getElementById('leadSuccess');
+        if (success) {
+            success.classList.remove('hidden');
+        }
+
+        // вставляем ссылку WhatsApp
+        document.getElementById('leadWhatsappLink').href = result.whatsapp_url;
+
+        setTimeout(() => {
+            window.open(result.whatsapp_url, '_blank');
+        }, 500);
+    });
+</script>
