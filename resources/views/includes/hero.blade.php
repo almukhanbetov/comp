@@ -45,7 +45,7 @@
 
                     <div class="fade-up d4 flex flex-wrap gap-10 pt-10 border-t border-[rgba(0,229,255,0.1)]">
                         <div>
-                            <div class="font-display text-3xl font-black text-white">15 лет</div>
+                            <div class="font-display text-3xl font-black text-white">6 лет</div>
                             <div class="text-sm text-slate-500 mt-1 font-medium">опыта</div>
                         </div>
                         <div>
