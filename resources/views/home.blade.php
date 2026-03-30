@@ -824,23 +824,18 @@
         document.getElementById('leadType').value = type;
         document.getElementById('leadEntityId').value = id;
     }
-
     function closeModal() {
         document.getElementById('leadModal').classList.add('hidden');
     }
-
     document.getElementById('leadForm').addEventListener('submit', async function(e) {
         e.preventDefault();
-
         const form = e.target;
-
         const data = {
             type: document.getElementById('leadType').value,
             entity_id: document.getElementById('leadEntityId').value,
             name: form.name.value,
             phone: form.phone.value,
         };
-
         const res = await fetch('/lead', {
             method: 'POST',
             headers: {
@@ -849,12 +844,9 @@
             },
             body: JSON.stringify(data)
         });
-
         const result = await res.json();
-
         // скрываем форму
         document.getElementById('leadForm').classList.add('hidden');
-
         // показываем success блок
         // const success = document.getElementById('leadSuccess');
         // success.classList.remove('hidden');
