@@ -14,11 +14,11 @@
         </a>
 
         <div class="hidden md:flex items-center gap-10 text-base font-semibold text-slate-400">
-            <a href="index.html" class="hover:text-[#00e5ff] transition-colors">Главная</a>
-            <a href="services.html" class="hover:text-[#00e5ff] transition-colors">Услуги</a>
-            <a href="teaching.html" class="hover:text-[#00e5ff] transition-colors">Обучение</a>
-            <a href="about.html" class="hover:text-[#00e5ff] transition-colors">Обо мне</a>
-            <a href="contact.html" class="hover:text-[#00e5ff] transition-colors">Контакты</a>
+            <a href="/" class="hover:text-[#00e5ff] transition-colors">Главная</a>
+            <a href="#services" class="hover:text-[#00e5ff] transition-colors">Услуги</a>
+            <a href="#teaching" class="hover:text-[#00e5ff] transition-colors">Обучение</a>
+            <a href="#about" class="hover:text-[#00e5ff] transition-colors">Обо мне</a>
+            <a href="#contact" class="hover:text-[#00e5ff] transition-colors">Контакты</a>
             <a href="{{ route('login') }}" class="btn-cyan px-5 py-2 rounded-xl text-sm">Войти</a>
         </div>
 
@@ -30,11 +30,11 @@
     </div>
     <div id="mobile-menu"
         class="hidden md:hidden border-t border-[rgba(0,229,255,0.1)] bg-[#080c14]/98 px-6 py-4 flex flex-col gap-4 text-sm text-slate-400">
-        <a href="index.html" onclick="closeMob()" class="hover:text-[#00e5ff] transition-colors">Главная</a>
-        <a href="services.html" onclick="closeMob()" class="hover:text-[#00e5ff] transition-colors">Услуги</a>
-        <a href="teaching.html" onclick="closeMob()" class="hover:text-[#00e5ff] transition-colors">Обучение</a>
-        <a href="about.html" onclick="closeMob()" class="hover:text-[#00e5ff] transition-colors">Обо мне</a>
-        <a href="contact.html" onclick="closeMob()" class="hover:text-[#00e5ff] transition-colors">Контакты</a>
-        <a href="" onclick="closeMob()" class="text-[#00e5ff]">Войти</a>
+        <a href="/" onclick="closeMob()" class="hover:text-[#00e5ff] transition-colors">Главная</a>
+        <a href="#services" onclick="closeMob()" class="hover:text-[#00e5ff] transition-colors">Услуги</a>
+        <a href="#teaching" onclick="closeMob()" class="hover:text-[#00e5ff] transition-colors">Обучение</a>
+        <a href="#about" onclick="closeMob()" class="hover:text-[#00e5ff] transition-colors">Обо мне</a>
+        <a href="#contact" onclick="closeMob()" class="hover:text-[#00e5ff] transition-colors">Контакты</a>
+        <a href="{{ route('login') }}" onclick="closeMob()" class="text-[#00e5ff]">Войти</a>
     </div>
 </nav>
