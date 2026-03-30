@@ -522,7 +522,7 @@
                             <div class="text-xs text-slate-500 mt-1 font-mono">обученных студентов</div>
                         </div>
                         <div class="card rounded-2xl p-4 text-center">
-                            <div class="font-display text-4xl font-black text-[#00b4d8]">6 лет</div>
+                            <div class="font-display text-4xl font-black text-[#00b4d8]">15 лет</div>
                             <div class="text-xs text-slate-500 mt-1 font-mono">на рынке с 2019</div>
                         </div>
                         <div class="card rounded-2xl p-4 text-center" style="border-color:rgba(255,107,53,0.15)">

@@ -1,13 +1,8 @@
 <nav class="fixed top-0 left-0 right-0 z-50">
     <div class="w-full px-6 sm:px-10 lg:px-16 h-20 flex items-center justify-between">
         <a href="#" class="flex items-center gap-2.5">
-            <div class="relative w-8 h-8">
-                <div class="absolute inset-0 bg-[#00e5ff]/20 rounded-lg rotate-12"></div>
-                <svg class="relative z-10 w-8 h-8" viewBox="0 0 32 32" fill="none">
-                    <polyline points="4,20 10,12 16,18 22,8 28,14" stroke="#ff6b35" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                    <circle cx="28" cy="14" r="2.5" fill="#00e5ff" />
-                </svg>
+            <div class="relative w-16 h-16 flex items-center justify-center">
+                <img src="{{asset('assets/images/logo1.png') }}" alt="logo" />
             </div>
             <span class="font-display font-bold text-2xl">Complex<span class="text-[#ff6b35]">
                     Services</span></span>
