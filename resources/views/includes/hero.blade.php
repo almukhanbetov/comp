@@ -21,7 +21,7 @@
 
                 <h1
                     class="fade-up d2 font-display text-6xl sm:text-7xl lg:text-8xl font-black leading-[1.0] tracking-tight mb-8">
-                    Fullstack 1<br />
+                    Fullstack<br />
                     <span class="grad">разработчик</span><br />
                     и ментор
                 </h1>
