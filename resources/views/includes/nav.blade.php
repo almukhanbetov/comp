@@ -14,7 +14,7 @@
         </a>
 
         <div class="hidden md:flex items-center gap-10 text-base font-semibold text-slate-400">
-            <a href="index.html" class="hover:text-[#00e5ff] transition-colors">Главная</a>
+            <a href="/" class="hover:text-[#00e5ff] transition-colors">Главная</a>
             <a href="#services" class="hover:text-[#00e5ff] transition-colors">Услуги</a>
             <a href="#teaching" class="hover:text-[#00e5ff] transition-colors">Обучение</a>
             <a href="#about" class="hover:text-[#00e5ff] transition-colors">Обо мне</a>
