@@ -1,9 +1,6 @@
 @extends('layouts.auth')
-<!-- Neural network bg -->
 @section('content')
     <canvas id="neural-canvas"></canvas>
-
-    <!-- ── Ambient glows ── -->
     <div
         style="position:fixed;top:15%;left:10%;width:500px;height:500px;background:rgba(0,229,255,0.05);border-radius:50%;filter:blur(80px);pointer-events:none;z-index:1;">
     </div>
@@ -28,23 +25,19 @@
                 <span style="font-family:'Manrope',sans-serif;font-weight:800;font-size:22px;">Complex<span
                         style="color:#ff6b35;"> Services</span></span>
             </a>
-
             <!-- Center content -->
             <div class="fade-up d2">
                 <p
                     style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--cyan);margin-bottom:20px;">
                     // добро пожаловать</p>
-
                 <h1
                     style="font-family:'Manrope',sans-serif;font-weight:900;font-size:clamp(2.8rem,4vw,4rem);line-height:1.05;letter-spacing:-0.03em;margin-bottom:24px;">
                     Войдите в<br /><span class="grad">личный кабинет</span>
                 </h1>
-
                 <p
                     style="color:#94a3b8;font-size:17px;line-height:1.75;max-width:380px;font-weight:500;margin-bottom:48px;">
                     Управляйте проектами, отслеживайте задачи и общайтесь с командой в одном месте.
                 </p>
-
                 <!-- Feature list -->
                 <div style="display:flex;flex-direction:column;gap:18px;">
                     <div style="display:flex;align-items:center;gap:14px;">
