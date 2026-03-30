@@ -7,13 +7,8 @@
              <!-- Col 1: Logo + описание + контакты -->
              <div>
                  <div class="flex items-center gap-3 mb-5">
-                     <div class="relative w-9 h-9 flex-shrink-0">
-                         <div class="absolute inset-0 bg-[#ff6b35]/20 rounded-lg rotate-12"></div>
-                         <svg class="relative z-10 w-9 h-9" viewBox="0 0 32 32" fill="none">
-                             <polyline points="4,20 10,12 16,18 22,8 28,14" stroke="#ff6b35" stroke-width="2"
-                                 stroke-linecap="round" stroke-linejoin="round" />
-                             <circle cx="28" cy="14" r="2.5" fill="#00e5ff" />
-                         </svg>
+                     <div class="relative w-16 h-16 flex items-center justify-center">
+                         <img src="{{asset('assets/images/logo.png') }}" alt="logo" class="w-full h-full object-contain transition-transform group-hover:scale-110 duration-300">
                      </div>
                      <div>
                          <div class="font-display font-extrabold text-lg leading-none">Complex<span
